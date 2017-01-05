@@ -14,7 +14,7 @@ func TestInstant(t *testing.T) {
 	assert.True(t, i2 > i1)
 	assert.Equal(t, i1, i2.Add(-1*delta))
 	assert.Equal(t, delta, i2.Sub(i1))
-	assert.True(t, i1.ToTime().Sub(t1) < 100*time.Millisecond, "Monotonic instant and actual time should be close")
+	assert.True(t, i1.Time().Sub(t1) < 100*time.Millisecond, "Monotonic instant and actual time should be close")
 }
 
 func TestStopwatch(t *testing.T) {

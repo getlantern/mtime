@@ -21,8 +21,8 @@ func (i Instant) Sub(o Instant) time.Duration {
 	return time.Duration(i - o)
 }
 
-// ToTime converts an Instant to the equivalent time.Time
-func (i Instant) ToTime() time.Time {
+// Time converts an Instant to the equivalent time.Time
+func (i Instant) Time() time.Time {
 	s := int64(i) / int64(time.Second)
 	ns := int64(i) % int64(time.Second)
 	return time.Unix(s, ns)
