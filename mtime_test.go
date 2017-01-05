@@ -1,4 +1,4 @@
-package stopwatch
+package mtime
 
 import (
 	"github.com/stretchr/testify/assert"

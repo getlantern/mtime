@@ -1,7 +1,7 @@
-// Package stopwatch provides a stopwatch suitable for timing operations that
-// uses an underlying monotonic time source based on
+// Package mtime provides time operations using a monotonic time source, which
+// is useful when you want to work with elapsed rather than wall time. Based on
 // github.com/aristanetworks/monotime.
-package stopwatch
+package mtime
 
 import (
 	"github.com/aristanetworks/goarista/monotime"
