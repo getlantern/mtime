@@ -1,6 +1,7 @@
 // Package mtime provides time operations using a monotonic time source, which
 // is useful when you want to work with elapsed rather than wall time. Based on
-// github.com/aristanetworks/monotime.
+// github.com/aristanetworks/monotime. mtime uses Instants. INSTANTS ARE NOT
+// REAL TIMES, they are only useful for measuring elapsed time.
 package mtime
 
 import (
@@ -8,7 +9,8 @@ import (
 	"time"
 )
 
-// An Instant represents an instant in monotonically increasing time
+// An Instant represents an instant in monotonically increasing time. INSTANTS
+// ARE NOT REAL TIMES, they are only useful for measuring elapsed time.
 type Instant uint64
 
 // Add adds a duration to an Instant
@@ -19,13 +21,6 @@ func (i Instant) Add(d time.Duration) Instant {
 // Sub subtracts an Instant from an Instant
 func (i Instant) Sub(o Instant) time.Duration {
 	return time.Duration(i - o)
-}
-
-// Time converts an Instant to the equivalent time.Time
-func (i Instant) Time() time.Time {
-	s := int64(i) / int64(time.Second)
-	ns := int64(i) % int64(time.Second)
-	return time.Unix(s, ns)
 }
 
 // Now() returns an instant in monotonic time
