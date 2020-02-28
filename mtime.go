@@ -5,7 +5,6 @@
 package mtime
 
 import (
-	"github.com/aristanetworks/goarista/monotime"
 	"time"
 )
 
@@ -25,7 +24,7 @@ func (i Instant) Sub(o Instant) time.Duration {
 
 // Now() returns an instant in monotonic time
 func Now() Instant {
-	return Instant(monotime.Now())
+	return Instant(now())
 }
 
 // Stopwatch starts a stopwatch and returns a function that itself returns the
